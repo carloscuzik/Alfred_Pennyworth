@@ -1,0 +1,13 @@
+// Administrative functions.
+
++ shutdown{weight=10000}
+* <id> eq <bot master> => Shutting down... <call>shutdown</call>
+- {@botmaster only}
+
++ botmaster only
+- Você não tem esse poder. Eu sou a SkyNet!
+
+> object shutdown python
+	# Shut down
+	quit()
+< object
