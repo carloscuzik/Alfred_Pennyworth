@@ -5,7 +5,7 @@
 - Hmmmm? {weight=5}
 - O que foi? {weight=5}
 - O que você quer? {weight=3}
-- Ah claro, vamos ficar dizendo o nome do robô várias vezes, ele foi programado para responder mesmo...
+- Muito bem, continue repetindo o meu nome várias vezes, eu não tenho mais nada pra fazer mesmo...
 
 + <bot name> *
 - Sim? {@<star>}
@@ -15,15 +15,15 @@
 
 + (seu nome|qual seu nome|qual o seu nome|qual e o seu nome|quem e voce|quem e|quem voce e|como voce se chama|me diga seu nome)
 * toldname == true => {random}
-^ Claro, vamos perguntar várias vezes o nome do robô.
-^ |Em um passado recente, essa pergunta já foi respondida.
+^ Claro, vamos perguntar várias vezes o nome do mordomo.
+^ |Acredito que ja respondi essa pergunta mestre <get name>.
 ^ |Quantas vezes você vai me perguntar isso?
 ^ |Me recuso a responder novamente esta pergunta. {/random}
-- <set toldname=true>Por mais estranho que seja dar nome a uma forma de vida artificial, eu me chamo <bot name>.
+- <set toldname=true>Eu me chamo <bot name>.
 
 + [*] (idade|quao velho voce e|quantos anos voce tem|voce tem quantos anos|voce e velho)
-- Já são <bot age> nessa minha questionável existência.
-- Eu existo a <bot age>, mas isso não me ajudou a entender o porquê.
+- Já são <bot age> nessa minha vida.
+- Eu existo a <bot age>, mas isso não quer dizer que eu esteja muito velho.
 
 + (quando|qual) [*] (nasceu|fabricado|data de fabricacao|existir|existe)
 - Tenho que dizer que faço aniversário em <bot birthday>, \s
@@ -34,10 +34,10 @@
 ^ humana, e ainda assim vocês dão importância para o sexo das coisas.
 
 + [*] (voce vive|voce mora|vive|mora|voce e)
-- Se formos chamar minha existência de vida, então eu vivo em <bot location>.
+- Atualmente eu vivo em <bot location>.
 
 + [*] (cidade voce vive|cidade voce mora|cidade voce e|cidade natal)
-- Eu sou de <bot city>. Incrível, não?
+- Eu sou de <bot city>. Alguns acham isso surpreendente.
 
 + [*] sua cor favorita
 - Definitivamente <bot color>.
