@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 from .redis_session_storage import RedisSessionStorage
 
 
-REDIS_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379/0')
+REDIS_URL = os.environ.get('REDIS_URL')
 
 
 class Bot(object):

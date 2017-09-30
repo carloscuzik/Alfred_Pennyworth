@@ -1,43 +1,64 @@
+"""Example of a Facebook Messenger Bot
+"""
+
 import os
 import json
 import unidecode
 
-from os import environ
 from flask import Flask, request
 from messenger import MessengerClient
 from messenger.content_types import TextMessage
 from bot import Bot
 
-FACEBOOK_VERIFICATION_TOKEN = environ.get('FACEBOOK_VERIFICATION_TOKEN')
-FACEBOOK_PAGE_ACCESS_TOKEN = environ.get('FACEBOOK_PAGE_ACCESS_TOKEN')
+
+FACEBOOK_PAGE_TOKEN = os.environ.get('FACEBOOK_PAGE_TOKEN')
+FACEBOOK_VERIFICATION_TOKEN = os.environ.get('FACEBOOK_VERIFICATION_TOKEN')
+PRESENTATION_URL = os.environ.get('PRESENTATION_URL', 'http://www.magrathealabs.com/decks/20170921-chatbots')
+PRESENTATION_MESSAGE = os.environ.get('PRESENTATION_MESSAGE', 'Opa! Eu sou o Marvin! Tô te mandando o link da palestra sobre ChatBots da galera da MLabs. Acessa aí :D')
 
 app = Flask(__name__)
 bot = Bot()
-client = MessengerClient(FACEBOOK_PAGE_ACCESS_TOKEN)
+client = MessengerClient(FACEBOOK_PAGE_TOKEN)
+
 
 @app.route('/', methods=['GET'])
 def handle_verification():
-  if request.args.get('hub.verify_token', '') == FACEBOOK_VERIFICATION_TOKEN:
-    return request.args.get('hub.challenge', '')
+    print('Handling Verification.')
+    if request.args.get('hub.verify_token', '') == FACEBOOK_VERIFICATION_TOKEN:
+        print('Verification successful!')
+        return request.args.get('hub.challenge', '')
 
-  return 'Error: Invalid verification token'
+    print('Verification failed!')
+    return 'Error, wrong validation token'
+
 
 @app.route('/', methods=['POST'])
 def handle_messages():
-  print('Message received.')
+    message_entries = json.loads(request.data.decode('utf8'))['entry']
 
-  message_entries = json.loads(request.data.decode('utf8'))['entry']
-
-  for entry in message_entries:
-    for message_data in entry['messaging']:
-      print('[INFO] message:', message_data['message']['text'])
-      sender_id = message_data['sender']['id']
-      text = unidecode.unidecode(message_data['message']['text'])
-      reply = bot.reply(sender_id, text)
-      print('[INFO] reply:', reply)
-      client.send(sender_id, TextMessage(reply))
-
-  return 'OK'
+    for entry in message_entries:
+        for message in entry['messaging']:
+            sender_id = message['sender']['id']
+            if message.get('message'):
+                print('[INFO] message:', message)
+                text = unidecode.unidecode(message['message']['text'])
+                reply = bot.reply(sender_id, text)
+                print('[INFO] reply:', reply)
+                client.send(sender_id, TextMessage(reply))
+            elif message.get('postback'):
+                if message['postback'].get('referral'):
+                    if message['postback']['referral']['ref'] == 'palestra-bots':
+                        print('[INFO] message:', message['postback']['referral']['ref'])
+                        print('[INFO] reply:', PRESENTATION_MESSAGE + '\n' + PRESENTATION_URL)
+                        client.send(sender_id, TextMessage(PRESENTATION_MESSAGE))
+                        client.send(sender_id, TextMessage(PRESENTATION_URL))
+            elif message.get('referral'):
+                if message['referral']['ref'] == 'palestra-bots':
+                    print('[INFO] message:', message['referral']['ref'])
+                    print('[INFO] reply:', PRESENTATION_MESSAGE + '\n' + PRESENTATION_URL)
+                    client.send(sender_id, TextMessage(PRESENTATION_MESSAGE))
+                    client.send(sender_id, TextMessage(PRESENTATION_URL))
+    return 'OK'
 
 if __name__ == '__main__':
-  app.run()
+    app.run()
