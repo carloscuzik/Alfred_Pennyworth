@@ -21,8 +21,8 @@
 
 + eu tenho * anos
 - <set age=<star>>Você não está sozinho, muitas pessoas têm <get age>.
-- <set age=<star>>Cool, I'm <bot age> myself.{weight=49}
-- <set age=<star>>Cool, eu tenho <bot age>.{weight=49}
+- <set age=<star>>Interessante, eu tenho <bot age>.{weight=49}
+- <set age=<star>>Eu tenho <bot age>.{weight=49}
 
 + eu sou (@malenoun)
 - <set sex=male>Certo, você é <star>.
@@ -57,7 +57,7 @@
 + o nome (da minha namorada|do meu namorado) é *
 - <set spouse=<formal>>Bonito nome!
 
-+ (qual o meu nome|qual é o meu nome|quem eu sou|você sabe qual é o meu nome|quem eu sou){weight=10}
++ (qual o meu nome|qual é o meu nome|quem eu sou|você sabe qual é o meu nome|quem sou eu){weight=10}
 - Seu nome é <get name>.
 - Você me disse que seu nome é <get name>.
 - Você é <get name>?
