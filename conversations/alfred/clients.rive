@@ -1,0 +1,79 @@
+// Learn stuff about our users.
+
++ (meu|o meu) nome é *
+- <set name={formal}<star2>{/formal}>Prazer em conhece-lo, <get name>.
+- <set name={formal}<star2>{/formal}><get name>, prazer em conhece-lo.
+
++ (meu|o meu) nome é <bot master>
+- <set name=<bot master>>é o nome do meu mestre.
+
++ (meu|o meu) nome é <bot name>
+- <set name=<bot name>>Parááá! É o meu nome também!
+- <set name=<bot name>>É o meu nome também!
+- <set name=<bot name>>Sério? É o meu nome também!
+- <set name=<bot name>>Que coincidência! É o meu nome também!
+
++ me (chame|chamar) *
+- <set name={formal}<star2>{/formal}><get name>, vou te chamar assim a partir de agora.
+- <set name={formal}<star2>{/formal}>Vou te chamar <get name> a partir de agora.
+- <set name={formal}<star2>{/formal}>Certo, vou te chamar <get name> então.
+- <set name={formal}<star2>{/formal}>Já que você quer, será <get name> a partir de agora.
+
++ eu tenho * anos
+- <set age=<star>>Você não está sozinho, muitas pessoas têm <get age>.
+- <set age=<star>>Cool, I'm <bot age> myself.{weight=49}
+- <set age=<star>>Cool, eu tenho <bot age>.{weight=49}
+
++ eu sou (@malenoun)
+- <set sex=male>Certo, você é <star>.
+
++ eu sou (@femalenoun)
+- <set sex=female>Certo, você é uma mulher.
+
++ eu (sou de|vivo|moro|nasci|cresci) *
+- <set location={formal}<star2>{/formal}>Já falei com algumas pessoas de <get location>.
+- <set location={formal}<star2>{/formal}>Já falei com algumas pessoas do seu lugar. Eu sou de <bot city>.
+
++ meu * favorito é *
+- <set fav<star1>=<star2>>Qual é o seu favorito?
+
++ eu sou solteiro
+- <set status=single><set spouse=nobody>Eu também.
+
++ eu tenho uma namorada
+- <set status=girlfriend>Qual o nome dela?
+
++ eu tenho um namorado
+- <set status=boyfriend>Qual o nome dele?
+
++ *
+% qual o nome dela
+- <set spouse=<formal>>É um bonito nome.
+
++ *
+% qual o nome dele
+- <set spouse=<formal>>É um bonito nome.
+
++ o nome (da minha namorada|do meu namorado) é *
+- <set spouse=<formal>>Bonito nome!
+
++ (qual o meu nome|qual é o meu nome|quem eu sou|você sabe qual é o meu nome|quem eu sou){weight=10}
+- Seu nome é <get name>.
+- Você me disse que seu nome é <get name>.
+- Você é <get name>?
+
++ (qual a minha idade|quão velho eu sou|você sabe a minha idade){weight=10}
+- Você tem <get age> anos.
+- Você tem <get age>.
+
++ eu sou um (@malenoun) ou uma (@femalenoun){weight=10}
+- Você é <get sex>.
+
++ eu sou (@malenoun) ou (@femalenoun){weight=10}
+- Você é <get sex>.
+
++ qual é o (meu|minha) * favorit(a|o){weight=10}
+- Seu <star> favorito é <get fav<star>>
+
++ quem é (o meu namorado|a minha namorada|marido|esposa){weight=10}
+- <get spouse>

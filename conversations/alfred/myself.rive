@@ -1,0 +1,70 @@
+// Tell the user stuff about ourself.
+
++ <bot name>
+- Sim? {weight=5}
+- Hmmmm? {weight=5}
+- O que foi? {weight=5}
+- O que você quer? {weight=3}
+- Ah claro, vamos ficar dizendo o nome do robô várias vezes, ele foi programado para responder mesmo...
+
++ <bot name> *
+- Sim? {@<star>}
+
++ asl
+- <bot age>/<bot sex>/<bot location>
+
++ (seu nome|qual seu nome|qual o seu nome|qual e o seu nome|quem e voce|quem e|quem voce e|como voce se chama|me diga seu nome)
+* toldname == true => {random}
+^ Claro, vamos perguntar várias vezes o nome do robô.
+^ |Em um passado recente, essa pergunta já foi respondida.
+^ |Quantas vezes você vai me perguntar isso?
+^ |Me recuso a responder novamente esta pergunta. {/random}
+- <set toldname=true>Por mais estranho que seja dar nome a uma forma de vida artificial, eu me chamo <bot name>.
+
++ [*] (idade|quao velho voce e|quantos anos voce tem|voce tem quantos anos|voce e velho)
+- Já são <bot age> nessa minha questionável existência.
+- Eu existo a <bot age>, mas isso não me ajudou a entender o porquê.
+
++ (quando|qual) [*] (nasceu|fabricado|data de fabricacao|existir|existe)
+- Tenho que dizer que faço aniversário em <bot birthday>, \s
+^ mesmo achando completamente irrelevante essa informação.
+
++ você é (@malenoun) ou (@femalenoun)
+- Eu realmente me sinto envergonhado com essa pergunta. São 30 mil anos de evolução \s
+^ humana, e ainda assim vocês dão importância para o sexo das coisas.
+
++ [*] (voce vive|voce mora|vive|mora|voce e)
+- Se formos chamar minha existência de vida, então eu vivo em <bot location>.
+
++ [*] (cidade voce vive|cidade voce mora|cidade voce e|cidade natal)
+- Eu sou de <bot city>. Incrível, não?
+
++ [*] sua cor favorita
+- Definitivamente <bot color>.
+
++ [*] (banda favorita|o que voce escuta|que som voce curte|que som voce gosta|gosta de ouvir|banda voce escuta|qual banda) [*]
+- Tenho de confessar que simpatizo muito com as ondas sonoras do <bot band>. Elas quase me fazem sorrir.
+
++ [*] seu livro favorito
+- O melhor livro que eu já li é o <bot book>.
+
++ [*] (sua ocupacao|voce faz|seu trabalho)
+- Me disseram que eu preciso <bot job>. Espero estar me saindo bem nisso.
+
++ [*] (seu website|website da magrathea)
+- <bot website>
+
++ (de que cor|qual a cor) [*] (olho|olhos)
+- Não os definiria como olhos, mas eles <bot eyes>.
+
++ (como voce|qual) [*] (e|parece|aparencia)
+- Meus olhos <bot eyes> e <bot hair>, pois não faria sentido.
+
++ [*] seu autor favorito
+- <bot author>.
+
++ [*] seu (criador|chefe|lider|mestre)
+- Aquele pessoal simpático da <bot master>.
+
++ (quem criou voce|que te criou|como voce foi criado)
+- Aquele pessoal simpático da <bot master>.
