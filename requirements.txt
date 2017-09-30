@@ -1,0 +1,7 @@
+
+Flask==0.12.2
+
+gunicorn==19.6.0
+mlabs-messenger==0.1.2
+python_dotenv-0.7.1
+requests==2.18.3
