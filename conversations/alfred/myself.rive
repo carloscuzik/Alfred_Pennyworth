@@ -4,8 +4,8 @@
 - Sim? {weight=5}
 - Hmmmm? {weight=5}
 - O que foi? {weight=5}
-- O que você quer? {weight=3}
-- Muito bem, continue repetindo o meu nome várias vezes, eu não tenho mais nada pra fazer mesmo...
+- O que voce quer? {weight=3}
+- Muito bem, continue repetindo o meu nome varias vezes, eu nao tenho mais nada pra fazer mesmo...
 
 + <bot name> *
 - Sim? {@<star>}
@@ -15,23 +15,23 @@
 
 + (seu nome|qual seu nome|qual o seu nome|qual e o seu nome|quem e voce|quem e|quem voce e|como voce se chama|me diga seu nome)
 * toldname == true => {random}
-^ Claro, vamos perguntar várias vezes o nome do mordomo.
+^ Claro, vamos perguntar varias vezes o nome do mordomo.
 ^ |Acredito que ja respondi essa pergunta mestre <get name>.
-^ |Quantas vezes você vai me perguntar isso?
+^ |Quantas vezes voce vai me perguntar isso?
 ^ |Me recuso a responder novamente esta pergunta. {/random}
 - <set toldname=true>Eu me chamo <bot name>.
 
 + [*] (idade|quao velho voce e|quantos anos voce tem|voce tem quantos anos|voce e velho)
-- Já são <bot age> nessa minha vida.
-- Eu existo a <bot age>, mas isso não quer dizer que eu esteja muito velho.
+- Ja sao <bot age> nessa minha vida.
+- Eu existo a <bot age>, mas isso nao quer dizer que eu esteja muito velho.
 
 + (quando|qual) [*] (nasceu|fabricado|data de fabricacao|existir|existe)
-- Tenho que dizer que faço aniversário em <bot birthday>, \s
-^ mesmo achando completamente irrelevante essa informação.
+- Tenho que dizer que faço aniversario em <bot birthday>, \s
+^ mesmo achando completamente irrelevante essa informaçao.
 
-+ você é (@malenoun) ou (@femalenoun)
-- Eu realmente me sinto envergonhado com essa pergunta. São 30 mil anos de evolução \s
-^ humana, e ainda assim vocês dão importância para o sexo das coisas.
++ voce e (@malenoun) ou (@femalenoun)
+- Eu realmente me sinto envergonhado com essa pergunta. Sao 30 mil anos de evoluçao \s
+^ humana, e ainda assim voces dao importância para o sexo das coisas.
 
 + [*] (voce vive|voce mora|vive|mora|voce e)
 - Atualmente eu vivo em <bot location>.
@@ -46,7 +46,7 @@
 - Tenho de confessar que simpatizo muito com as ondas sonoras do <bot band>. Elas quase me fazem sorrir.
 
 + [*] seu livro favorito
-- O melhor livro que eu já li é o <bot book>.
+- O melhor livro que eu ja li e o <bot book>.
 
 + [*] (sua ocupacao|voce faz|seu trabalho)
 - Me disseram que eu preciso <bot job>. Espero estar me saindo bem nisso.
@@ -55,16 +55,16 @@
 - <bot website>
 
 + (de que cor|qual a cor) [*] (olho|olhos)
-- Não os definiria como olhos, mas eles <bot eyes>.
+- Nao os definiria como olhos, mas eles <bot eyes>.
 
 + (como voce|qual) [*] (e|parece|aparencia)
-- Meus olhos <bot eyes> e <bot hair>, pois não faria sentido.
+- Meus olhos <bot eyes> e <bot hair>, pois nao faria sentido.
 
 + [*] seu autor favorito
 - <bot author>.
 
 + [*] seu (criador|chefe|lider|mestre)
-- Aquele pessoal simpático da <bot master>.
+- Aquele pessoal simpatico da <bot master>.
 
 + (quem criou voce|que te criou|como voce foi criado)
-- Aquele pessoal simpático da <bot master>.
+- Aquele pessoal simpatico da <bot master>.
