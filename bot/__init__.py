@@ -4,9 +4,7 @@ from rivescript import RiveScript
 from urllib.parse import urlparse
 from .redis_session_storage import RedisSessionStorage
 
-
 REDIS_URL = os.environ.get('REDIS_URL')
-
 
 class Bot(object):
     def __init__(self, directory='./conversations', redis_url=REDIS_URL):

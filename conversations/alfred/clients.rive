@@ -30,6 +30,9 @@
 + eu sou (@femalenoun)
 - <set sex=female>Certo, você é uma mulher.
 
++ eu (sou de|vivo|moro|nasci|cresci) <bot city>
+- <set location={formal}<star2>{/formal}>Eu sou de <bot city> também.
+
 + eu (sou de|vivo|moro|nasci|cresci) *
 - <set location={formal}<star2>{/formal}>Já falei com algumas pessoas de <get location>.
 - <set location={formal}<star2>{/formal}>Já falei com algumas pessoas do seu lugar. Eu sou de <bot city>.

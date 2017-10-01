@@ -1,6 +1,3 @@
-"""Example of a Facebook Messenger Bot
-"""
-
 import os
 import json
 import unidecode
@@ -10,7 +7,6 @@ from messenger import MessengerClient
 from messenger.content_types import TextMessage
 from bot import Bot
 
-
 FACEBOOK_PAGE_TOKEN = os.environ.get('FACEBOOK_PAGE_TOKEN')
 FACEBOOK_VERIFICATION_TOKEN = os.environ.get('FACEBOOK_VERIFICATION_TOKEN')
 
@@ -18,17 +14,15 @@ app = Flask(__name__)
 bot = Bot()
 client = MessengerClient(FACEBOOK_PAGE_TOKEN)
 
-
 @app.route('/', methods=['GET'])
 def handle_verification():
-    print('Handling Verification.')
+    print('Iniciando a Verificação.')
     if request.args.get('hub.verify_token', '') == FACEBOOK_VERIFICATION_TOKEN:
-        print('Verification successful!')
+        print('Verificação bem sucedida!')
         return request.args.get('hub.challenge', '')
 
-    print('Verification failed!')
-    return 'Error, wrong validation token'
-
+    print('Falha na Verificação!')
+    return 'Erro, Token de Validação não Confere'
 
 @app.route('/', methods=['POST'])
 def handle_messages():
