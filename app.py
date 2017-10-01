@@ -13,8 +13,6 @@ from bot import Bot
 
 FACEBOOK_PAGE_TOKEN = os.environ.get('FACEBOOK_PAGE_TOKEN')
 FACEBOOK_VERIFICATION_TOKEN = os.environ.get('FACEBOOK_VERIFICATION_TOKEN')
-PRESENTATION_URL = os.environ.get('PRESENTATION_URL', 'http://www.magrathealabs.com/decks/20170921-chatbots')
-PRESENTATION_MESSAGE = os.environ.get('PRESENTATION_MESSAGE', 'Opa! Eu sou o Marvin! Tô te mandando o link da palestra sobre ChatBots da galera da MLabs. Acessa aí :D')
 
 app = Flask(__name__)
 bot = Bot()
@@ -49,15 +47,9 @@ def handle_messages():
                 if message['postback'].get('referral'):
                     if message['postback']['referral']['ref'] == 'palestra-bots':
                         print('[INFO] message:', message['postback']['referral']['ref'])
-                        print('[INFO] reply:', PRESENTATION_MESSAGE + '\n' + PRESENTATION_URL)
-                        client.send(sender_id, TextMessage(PRESENTATION_MESSAGE))
-                        client.send(sender_id, TextMessage(PRESENTATION_URL))
             elif message.get('referral'):
                 if message['referral']['ref'] == 'palestra-bots':
                     print('[INFO] message:', message['referral']['ref'])
-                    print('[INFO] reply:', PRESENTATION_MESSAGE + '\n' + PRESENTATION_URL)
-                    client.send(sender_id, TextMessage(PRESENTATION_MESSAGE))
-                    client.send(sender_id, TextMessage(PRESENTATION_URL))
     return 'OK'
 
 if __name__ == '__main__':
