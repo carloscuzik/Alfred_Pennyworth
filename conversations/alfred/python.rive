@@ -3,23 +3,23 @@
 ! version = 2.0
 
 > object add python
-    a, b = args
-    return int(a) + int(b)
+	a, b = args
+	return int(a) + int(b)
 < object
 
 > object minus python
-    a, b = args
-    return int(a) - int(b)
+	a, b = args
+	return int(a) - int(b)
 < object
 
 > object mult python
-    a, b = args
-    return int(a) * int(b)
+	a, b = args
+	return int(a) * int(b)
 < object
 
 > object div python
-    a, b = args
-    return int(a) / int(b)
+	a, b = args
+	return int(a) / int(b)
 < object
 
 + quanto e # mais #
