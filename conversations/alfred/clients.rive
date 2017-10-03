@@ -17,9 +17,7 @@
 - <set name={formal}<star2>{/formal}>Ja que voce quer, sera <get name> a partir de agora.
 
 + eu tenho * anos
-- <set age=<star>>Voce nao esta sozinho, muitas pessoas tem <get age>.
-- <set age=<star>>Interessante, eu tenho <bot age>.{weight=49}
-- <set age=<star>>Eu tenho <bot age>.{weight=49}
+- <set age=<star>>Que massa que você tem <get age> anos.
 
 + eu sou (@malenoun)
 - <set sex=male>Certo, voce e <star>.
