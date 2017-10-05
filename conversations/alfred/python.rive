@@ -32,4 +32,4 @@
 - <star1> * <star2> = <call>mult <star1> <star2></call>
 
 + quanto e # (dividido|dividido por) #
-- <star1> / <star2> = <call>div <star1> <star2></call>
+- <star1> / <star3> = <call>div <star1> <star3></call>
