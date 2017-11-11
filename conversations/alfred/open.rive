@@ -1,12 +1,12 @@
 //Default Error
 
 + *
-- Desculpe, nao sei como lhe responder isto mestre <get name>.
+- Desculpe, nao sei como lhe responder isto neste momento, posso falar com o Advogado e lhe responder mais tarde.
 
 //Greetings/Manners
 
 + (ola|oi|oii|oiii|e ai|hi|hey|howdy|hola|hai|yo|aloha|opa|quale|coe) [*]
-- Ola! =D.
+- Ola! Em que posso lhe ajudar.
 
 + (tudo certo|tudo bem|como vai|turubom) [*]
 - Tudo bem... eu acho...
@@ -14,16 +14,10 @@
 - Sou um robo, dificil definir como estou no momento... acho que funcional.
 
 + (obrigado|valeu|thanks|gracias) [*]
-- Fico... satisfeito em ajudar.
-- Imagina, estou apenas obedecendo minha programacao.
-- Uau, quase senti que eu tenho um proposito afinal.
-- A minha existencia e questionavel, mas fico feliz em ajudar.
+- Fico satisfeito em ajudar.
 
 + (tchau|falou|valeu falou|falou valeu|inte|ate a proxima|fui|adeus|adios|xao|bye) [*]
-- Se isso e uma conversa eletronica, nao vejo sentido em despedidas.
-- Eu deveria dizer que espero ve-lo em breve...
-- Voce pode imaginar que eu estarei ansioso pelo seu retorno. \n Mesmo que nao seja verdade.
-- Ah, um pouco de silencio.
+- <star>, estou auqi para lhe ajudar.
 
 // Open questions/frases
 
