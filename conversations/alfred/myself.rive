@@ -69,11 +69,11 @@
 + (quem criou voce|que te criou|como voce foi criado)
 - Aquele pessoal simpatico da <bot master>.
 
-+ [*] esta meu processo?
-- Você poderia informar o númeor do processo?
++ [*] esta meu processo [*]
+- Voce poderia informar o nnmero do processo?
 
 + 123
-- Ok, pelo que eu verifiquei ele está com o status "Concluso pra Depacho", ou seja, o processo esta no gabinete do juiz aguardando a decisão dele. Posso te ajudar em algo mais?
+- Ok, pelo que eu verifiquei ele esta com o status "Concluso pra Depacho", ou seja, o processo esta no gabinete do juiz aguardando a decisao dele. Posso te ajudar em algo mais?
 
-+ Quanto tempo esse processo pode demorar?
-- De acordo com meus conhecimentos, a etapa de "Concluso pra Depacho" demora em média de 2 à 4 meses para ser concluída.
++ quanto tempo esse processo pode demorar [*]
+- De acordo com meus conhecimentos, a etapa de "Concluso pra Depacho" demora em media entre 2 e 4 meses para ser concluida.
